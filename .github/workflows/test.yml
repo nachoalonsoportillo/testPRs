@@ -1,0 +1,18 @@
+name: Test Workflow
+on:
+  workflow_disptach:
+  pull_request:
+    branches:
+      - main
+env:
+  ONE: ${{ secrets.GH_TOKEN }}
+  TWO: ${{ secrets.PASSWORD }}
+jobs:
+  first-job:
+    name: First Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: First step
+        run: |
+          echo "First  environment variable is ${{ env.ONE }}"
+          echo "Second environment variable is ${{ env.TWO }}"          
