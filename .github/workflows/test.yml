@@ -11,6 +11,7 @@ jobs:
   first-job:
     name: First Job
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: First step
         run: |
