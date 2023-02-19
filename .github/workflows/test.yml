@@ -15,4 +15,9 @@ jobs:
       - name: First step
         run: |
           echo "First  environment variable is $ONE"
-          echo "Second environment variable is $TWO"          
+          if [ $TWO == "12345password" ]
+          then
+            echo "Matches"
+          else
+            echo "Does not match"
+          fi
