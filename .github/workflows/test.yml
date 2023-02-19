@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: First step
         run: |
-          echo "First  environment variable is ${{ env.ONE }}"
-          echo "Second environment variable is ${{ env.TWO }}"          
+          echo "First  environment variable is $ONE"
+          echo "Second environment variable is $TWO"          
