@@ -5,7 +5,7 @@ on:
     branches:
       - main
 env:
-  ONE: ${{ secrets.GH_TOKEN }}
+  ONE: ${{ secrets.GITHUB_TOKEN }}
   TWO: ${{ secrets.PASSWORD }}
 jobs:
   first-job:
