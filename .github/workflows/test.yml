@@ -1,16 +1,17 @@
 name: Test Workflow
 on:
   workflow_dispatch:
-  pull_request:
+  pull_request_target:
     branches:
       - main
 env:
-  ONE: ${{ secrets.GH_TOKEN }}
+  ONE: ${{ secrets.GITHUB_TOKEN }}
   TWO: ${{ secrets.PASSWORD }}
 jobs:
   first-job:
     name: First Job
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: First step
         run: |
