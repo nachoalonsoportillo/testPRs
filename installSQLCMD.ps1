@@ -24,4 +24,9 @@ function Install-SQLCMD {
 }
 
 Install-SQLCMD
-Start-Process -FilePath "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\sqlcmd.exe" -ArgumentList @("-E", "-S .")
+Start-Process -FilePath "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\sqlcmd.exe" -ArgumentList @("-S .", "-U sqladminuser", "-P ThisIsNotVerySecure!", "-d sqldb0669udh-101", "-Q ""declare @i int = 0; declare @stmt varchar(200); while (@i <= 51000) begin set @i += 1; set @stmt = 'drop table if exists t' + cast(@i as varchar(5)) + '; create table t' + cast(@i as varchar(5)) + '(c1 int, c2 varchar(10), c3 bigint not null)'; exec (@stmt); end""")
+
+
+
+Start-Process -FilePath "C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\sqlcmd.exe" -ArgumentList @("-S sql-0669udh-101.database.windows.net", "-U sqladminuser", "-P ThisIsNotVerySecure!", "-d sqldb0669udh-101", "-Q ""declare @i int = 0; declare @stmt varchar(200); while (@i <= 51000) begin set @i += 1; set @stmt = 'drop table if exists t' + cast(@i as varchar(5)) + '; create table t' + cast(@i as varchar(5)) + '(c1 int, c2 varchar(10), c3 bigint not null)'; exec (@stmt); end""")
+
